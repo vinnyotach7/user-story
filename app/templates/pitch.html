@@ -1,0 +1,55 @@
+{% extends 'base.html'%}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block content %}
+<div class="container">
+<div class="row">
+        <nav class="navbar navbar-default" role="navigation">
+    
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-ex1-collapse" id="pro">
+                  <ul class="nav navbar-nav">
+                    <li><a href="/pitch">Pick up</a></li>
+                    <li><a href="/product">Product</a></li>
+                  <li><a href="/interview">Interview</a></li>
+                    <li><a href="/promotion">Promotion</a></li>
+                    
+                  </ul>
+                </div>
+              </nav>
+        <h1 class="text-center">Pick up pitches</h1>
+        <hr>
+
+        {% if pitches_interview %}
+
+           {% for pitch in pitches_interview %}
+           
+                <div class="panel panel-success panel-heading">
+                        <ol>
+                    <h3 style="font-family: 'Cookie', cursive;">{{pitch.body}}</h3> 
+                    <p>By:{{pitch.post}}</p>
+                    <p>{{pitch.date_posted}}</p> 
+                    
+                </ol>
+                </div>
+           
+           
+        
+           {% endfor %}
+           <a class="btn btn-success btn-lg text-center" href="/new_pitch"> Add a new pitch</a>
+
+        {% else%}
+            <h3 class="text-center">No pitches yet</h3>
+            
+
+            <a class="btn btn-success btn-lg text-center" href="/new_pitch"> Add a new pitch</a>
+        {% endif %}
+
+    </div> 
+
+
+
+
+
+</div>
+
+{% endblock%}
