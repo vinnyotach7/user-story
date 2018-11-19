@@ -1,5 +1,5 @@
  # PITCH-FACTS
-An application that allows users to make pitches and get feedback on them. 9/9/2018
+An application that allows users to make pitches and get feedback on them. 
 
  # By Vinny Otach
 
