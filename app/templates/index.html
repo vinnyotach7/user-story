@@ -1,4 +1,4 @@
-% extends 'base.html'%}
+{% extends 'base.html'%}
 {% import 'macros.html' as macro%}
 {% import 'bootstrap/wtf.html' as wtf %}
 
@@ -35,7 +35,7 @@
             <p class="latest"><b>Posted Pitches :</b></p>
             <div class="thumbnail pitches">
                 {{categories.categories|upper}} PITCHES
-                <p class="pitches">{{macro.displayPitches(pitchs)}}</p>
+                <p class="pitches">{{macro.displayPitches(pitches)}}</p>
             </div>
         </div>
     </div>

@@ -1,8 +1,8 @@
-from werkzeug.security import generate_password_hash, check_password_hash
-from datetime import datetime
-from . import login_manager
-from flask_login import UserMixin
 from . import db
+from werkzeug.security import generate_password_hash, check_password_hash
+from flask_login import UserMixin
+from . import login_manager
+from datetime import datetime
 
 
 @login_manager.user_loader
@@ -42,12 +42,12 @@ class User(UserMixin, db.Model):
 
 
 class Pitch(db.Model):
-    __tablename__ = 'pitchs'
+    __tablename__ = 'pitches'
 
     id = db.Column(db.Integer, primary_key=True)
     pitch = db.Column(db.String(255))
     posted = db.Column(db.DateTime, default=datetime.utcnow)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    user_id = db.Column("UserID", db.Integer, db.ForeignKey('users.id'))
     category_id = db.Column(db.Integer, db.ForeignKey('categories.id'))
     the_comment = db.relationship('Comment', backref='pitch', lazy='dynamic')
     the_upvotes = db.relationship('Upvote', backref='pitch', lazy='dynamic')
@@ -99,7 +99,7 @@ class Comment(db.Model):
     __tablename__ = 'comments'
 
     id = db.Column(db.Integer, primary_key=True)
-    pitch_id = db.Column(db.Integer, db.ForeignKey('pitchs.id'))
+    pitch_id = db.Column(db.Integer, db.ForeignKey('pitches.id'))
     comment = db.Column(db.String(255))
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     username = db.Column(db.String(255))
@@ -127,7 +127,7 @@ class Upvote(db.Model):
     __tablename__ = 'upvotes'
 
     id = db.Column(db.Integer, primary_key=True)
-    pitch_id = db.Column(db.Integer, db.ForeignKey('pitchs.id'))
+    pitch_id = db.Column(db.Integer, db.ForeignKey('pitches.id'))
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     upvote = db.Column(db.Integer, default=1)
 
@@ -139,7 +139,7 @@ class Downvote(db.Model):
     __tablename__ = 'downvotes'
 
     id = db.Column(db.Integer, primary_key=True)
-    pitch_id = db.Column(db.Integer, db.ForeignKey('pitchs.id'))
+    pitch_id = db.Column(db.Integer, db.ForeignKey('pitches.id'))
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     downvote = db.Column(db.Integer, default=1)
 

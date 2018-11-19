@@ -15,39 +15,39 @@ def index():
     View root page function that returns the index page and its data
     '''
     title = 'Welcome to the best pitching website'
-    pitchs = Pitch.get_all_pitches()
+    pitches = Pitch.get_all_pitches()
     categories = Category.get_categories()
-    return render_template('index.html', title=title, pitchs=pitchs, categories=categories)
+    return render_template('index.html', title=title, pitches=pitches, categories=categories)
 
 #categories section
 
 
-@main.route('/pickup/pitchs')
+@main.route('/pickup/pitches')
 def pick_up():
-    pitchs = Pitch.get_all_pitches()
+    pitches = Pitch.get_all_pitches()
     title = 'Pitch your pickup lines'
-    return render_template('pickup.html', title=title, pitchs=pitchs)
+    return render_template('pickup.html', title=title, pitches=pitches)
 
 
-@main.route('/interview/pitchs')
+@main.route('/interview/pitches')
 def interview_pitch():
-    pitchs = Pitch.get_all_pitches()
+    pitches = Pitch.get_all_pitches()
     title = 'Interview Pitches'
-    return render_template('interview.html', title=title, pitchs=pitchs)
+    return render_template('interview.html', title=title, pitches=pitches)
 
 
-@main.route('/promotion/pitchs')
+@main.route('/promotion/pitches')
 def promotion_pitch():
-    pitchs = Pitch.get_all_pitches()
+    pitches = Pitch.get_all_pitches()
     title = 'Promotion Pitches'
-    return render_template('promotion.html', title=title, pitchs=pitchs)
+    return render_template('promotion.html', title=title, pitches=pitches)
 
 
-@main.route('/product/pitchs')
+@main.route('/product/pitches')
 def product_pitch():
-    pitchs = Pitch.get_all_pitches()
+    pitches = Pitch.get_all_pitches()
     title = 'Product Pitches'
-    return render_template('product.html', title=title, pitchs=pitchs)
+    return render_template('product.html', title=title, pitches=pitches)
 #end of categories section
 
 
@@ -101,7 +101,7 @@ def single_comment(id):
     if comment is None:
         abort(404)
     format_comment = markdown2.markdown(comment.pitch_comment, extras=[
-                                        "code-friendly", "fenced-code-blocks"])
+                                    "code-friendly", "fenced-code-blocks"])
     return render_template('new_comment.html', review=review, format_comment=format_comment)
 
 

@@ -7,6 +7,9 @@ from flask_uploads import UploadSet, configure_uploads, IMAGES
 from flask_mail import Mail
 from flask_simplemde import SimpleMDE
 
+
+# file_path = os.path.abspath(os.getcwd())+"\database.db"
+
 bootstrap = Bootstrap()
 db = SQLAlchemy()
 mail = Mail()
