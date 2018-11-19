@@ -1,0 +1,57 @@
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
+
+    body {
+        background: url(/static/photos/pitch.jpeg);
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #categories {
+        font-family: 'Nunito Sans', sans-serif !important;
+        font-size: 16px;
+    }
+
+    #categoriess {
+        font-family: 'Nunito Sans', sans-serif !important;
+        font-size: 17px;
+    }
+
+    .title {
+        font-size: 20px;
+        font-family: 'Nunito Sans', sans-serif !important;
+    }
+
+    .latest {
+        font-family: 'Nunito Sans', sans-serif !important;
+        font-size: 25px;
+        text-decoration-line: underline;
+        color: black;
+    }
+
+    .pitches {
+        font-family: 'Nunito Sans', sans-serif !important;
+        color: black;
+        font-size: 16px;
+    }
+
+    .pitcher {
+        color: black;
+        font-size: 37px !important;
+        font-family: 'Nunito Sans', sans-serif !important;
+    }
+
+    .button {
+        border: solid green !important;
+        height: 40px !important;
+        background: rgb(26, 25, 25);
+        font-size: 16.5px;
+        color: whitesmoke !important;
+    }
+
+    .button:hover {
+        color: green !important;
+    }
+</style>

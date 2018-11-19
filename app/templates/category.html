@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% import 'macro.html' as macro %}
+
+{% block content %}
+
+<body>
+    <div>
+        <h2>{{category.name|upper}} PITCHES</h2>
+    </div>
+
+    {% if pitchs %}
+
+    {% for pitch in pitches %}
+    <h3>{{pitch.id}}</h3>
+    {%else%}
+</body>
+<style>
+    body {
+        background: url(/static/photos/pitch.jpeg);
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+{% endblock %}

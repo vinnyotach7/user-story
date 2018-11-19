@@ -1,20 +1,22 @@
-{% extends 'base.html'%} {% import "bootstrap/wtf.html" as wtf %} {% block content %}
+{% extends 'base.html'%}
 
-<div class="container" style="background-color:rgb(245, 245, 155);">
-    <div class="row">
-        <div class="col-md-3" style="padding:150px;"></div>
-        <div class="col-md-6">
-            {{ wtf.quick_form(fom) }}
+{% block content %}
+
+<body>
+    <div class="container">
+        <br>
+        <br>
+        <br>
+        <div class="thumbnail">
+            <p class="others">Other comments:</p>
+            <ol>
+                {% for item in comments %}
+                <li>
+                    <p class="comment"><b>{{item.comment}}</b></p>
+                    <p class="usernames">Comment by: {{item.username}}</p>
+                </li>
+                {% endfor %}
         </div>
-
-        {% for comment in comm %}
-
-        <p>{{ comment.comment }}</p>
-        <p> By: {{comment.poster}}</p>
-
-        {% endfor %}
-
-    </div>
-</div>
+</body>
 
 {% endblock %}
