@@ -25,9 +25,6 @@ As a user I would like:
 
  # Specifications
  <ul>
-<li>Behavior	Input	Outcome
-Register to be a user	Your email : jon@doe.com 
-Username : sylvester105
 <li>Password : sylverstar35	New user is registered</li>
 Log in	Your email : sylomondi@.com
 Password : sylverstar35	Logged in</li>
